@@ -8,7 +8,9 @@ import {
   Animated,
   Easing,
   TouchableOpacity,
-  LayoutAnimation
+  LayoutAnimation,
+  Image,
+  ImageBackground
 } from 'react-native';
 
 const { width, height } = Dimensions.get("window");
@@ -62,7 +64,7 @@ export default class Home extends Component {
 
     const naik = this.state.scrollY.interpolate({
       inputRange: [0, 200],
-      outputRange: [18 ,-10],
+      outputRange: [18 ,-15],
       extrapolate: 'clamp'
     })
 
@@ -72,7 +74,7 @@ export default class Home extends Component {
     
     return (
       <View style={styles.container}>
-        <Animated.View style={{ position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: 'red', height: barHeight, zIndex: headerZindex, justifyContent: 'flex-end', alignItems: 'center'}}>
+        <Animated.View style={{ position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: '#006a71', height: barHeight, zIndex: headerZindex, justifyContent: 'flex-end', alignItems: 'center'}}>
             <Animated.Text style={{ color: '#fff', fontSize: 17, fontWeight: 'bold', top: naik }}>Dio Dava Ramadha</Animated.Text>
         </Animated.View>
         
@@ -91,9 +93,12 @@ export default class Home extends Component {
               }]
             )
           }>
-            <Animated.View style={{ height: mengecil, width: mengecil, backgroundColor: 'green', borderRadius: 50, marginRight: 30, marginLeft: 10, zIndex: 100, overflow: 'hidden', marginTop: 190 - (100 /2) }}></Animated.View>
+            <Animated.View style={{ height: mengecil, width: mengecil, backgroundColor: '#fff', borderRadius: 50, marginRight: 30, marginLeft: 10, zIndex: 100, overflow: 'hidden', marginTop: 190 - (100 /2), justifyContent: 'center', alignItems: 'center' }}>
+              <Animated.Image source={require('../../images/ada.jpg')} style={{ width: '95%', height: '95%', borderRadius: 50 }} />
+            </Animated.View>
             <View style={{ backgroundColor: 'transparent', width: width, height: 190, marginTop: 10 }}>
-              <Text>Haloo</Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 18, marginLeft: 10 }}>Dio Dava Ramadha</Text>
+              <Text style={{ fontWeight: '700', fontSize: 15, marginLeft: 10, color: '#808080', marginTop: 5 }}>Dioramadhan74@gmail.com</Text>
             </View>
             <View style={{ height: 1000 }}></View>
 
